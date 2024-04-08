@@ -8,7 +8,6 @@ import requests
 from bs4 import BeautifulSoup
 import openai
 
-openai = openai.Client(api_key=st.secrets(OPENAI_API_KEY)
 
 # Set up Streamlit app
 st.set_page_config(page_title="Keyword Analysis and Ad Copy Generation", layout="wide")
@@ -19,7 +18,9 @@ with st.sidebar:
     st.subheader("User Inputs")
     
     # Anthropic API key input
-    anthropic_api_key = st.text_input("Enter your Anthropic API key:", type="password", value=st.secrets(ANTHROPIC_API_KEY))
+    anthropic_api_key = st.text_input("Enter your Anthropic API key:", type="password")
+    openai_api_key = st.text_input("Enter your Anthropic API key:", type="password")
+    openai = openai.Client(api_key=openai_api_key)
 
     # Keyword input
     input_type = st.radio("Select input type:", ("Manual", "CSV File"))
