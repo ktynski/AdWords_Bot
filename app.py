@@ -19,7 +19,7 @@ with st.sidebar:
     
     # Anthropic API key input
     anthropic_api_key = st.text_input("Enter your Anthropic API key:", type="password")
-    openai_api_key = st.text_input("Enter your Anthropic API key:", type="password")
+    openai_api_key = st.text_input("Enter your OpenAI API key:", type="password")
     openai = openai.Client(api_key=openai_api_key)
 
     # Keyword input
